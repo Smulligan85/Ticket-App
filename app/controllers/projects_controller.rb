@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      redirect_to @project, notice: "Prject is saved."
+      redirect_to @project, notice: "Project is saved."
     else
       # add else
     end

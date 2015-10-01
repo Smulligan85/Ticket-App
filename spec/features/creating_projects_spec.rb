@@ -9,6 +9,6 @@ RSpec.feature "Users can create new projects" do
     fill_in "Description", with: "New Horror Movie"
     click_button "Create Project"
 
-    expect(page).to have_content "Movie has been created"
+    expect(page).to have_content "Project is saved."
   end
 end
