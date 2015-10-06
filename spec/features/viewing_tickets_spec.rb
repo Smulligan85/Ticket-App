@@ -19,7 +19,7 @@ RSpec.feature "Users can view tickets" do
     click_link "Sublime Text 3"
 
     expect(page).to have_content "Make it new!"
-    expect(page).to_not have_content "Standards compliance"
+    expect(page).not_to have_content "Standards compliance"
 
     click_link "Make it new!"
     within("#ticket h2") do
