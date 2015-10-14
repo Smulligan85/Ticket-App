@@ -24,6 +24,10 @@ gem 'devise', '~> 3.5.2'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+
+# Pundit Authorization Gem
+gem 'pundit', '~> 1.0.1'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
