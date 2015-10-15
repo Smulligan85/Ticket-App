@@ -6,12 +6,8 @@ describe ProjectPolicy do
 
   subject { described_class }
 
-  permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
   permissions :show? do
-    let(:user) { FactoryGirl.create(user) }
+    let(:user) { FactoryGirl.create(:user) }
     let(:project) {FactoryGirl.create(:project) }
 
     it "blocks anonymous users" do
@@ -34,27 +30,16 @@ describe ProjectPolicy do
     end
 
     it "allows administrators" do
-      admin = FactoryGirl.create :user, :admin 
+      admin = FactoryGirl.create(:user, :admin)
       expect(subject).to permit(admin, project)
     end
 
     it "doesn't allow users assigned to other projects" do
-      other_project = FactoryGirl.create :project
+      other_project = FactoryGirl.create(:project)
       assign_role!(user, :manager, other_project)
       expect(subject).not_to permit(user, project)
     end
 
   end
 
-  permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
 end

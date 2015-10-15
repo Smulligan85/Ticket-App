@@ -13,7 +13,7 @@ RSpec.feature "Admins can archive users" do
     click_link "Archive User"
 
     expect(page).to have_content "User has been archived."
-    expect(page).to_not have_content user.email
+    expect(page).not_to have_content user.email
   end
 
   scenario "but cannot archive themselves" do
