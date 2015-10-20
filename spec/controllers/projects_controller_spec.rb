@@ -11,7 +11,7 @@ RSpec.describe ProjectsController, type: :controller do
     expect(flash[:alert]).to eq message
   end
 
-  it "handles unauthorized user correctly" do
+  it "handles unauthorized user by redirected to safe place" do
     allow(controller).to receive(:current_user)
 
     project = FactoryGirl.create(:project)
