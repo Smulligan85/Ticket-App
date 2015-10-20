@@ -14,6 +14,12 @@ RSpec.feature "Users can view projects" do
     click_link "Project 1"
     expect(page.current_url).to eq project_url(project)
   end
+
+  scenario "unless they do not have authorization" do
+    FactoryGirl.create(:project, name: "Hidden")
+    visit "/"
+    expect(page).not_to have_content "Hidden"
+  end
   
 end
     
