@@ -80,3 +80,4 @@ describe ProjectPolicy do
       it { should permit_action :update }
     end
 end
+end
